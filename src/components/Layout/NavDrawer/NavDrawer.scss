@@ -1,0 +1,14 @@
+@import '../../../styles/sass/root';
+
+.NavDrawer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: $mobile_header_height;
+  padding:20px;
+}
+
+.NavDrawer i {
+  @include clickable-text(25px, $neutral_grayish_violet, $neutral_dark_blue);
+}

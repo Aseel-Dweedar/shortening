@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react'
-import {useDispatch, useSelector} from 'react-redux';
+import Navbar from "./Navbar/Navbar";
+import NavDrawer from "./NavDrawer/NavDrawer";
+import {useDispatch} from 'react-redux';
 import {resize} from '../../store/home/homeSlice';
 
 function Layout() {
@@ -7,8 +9,6 @@ function Layout() {
     const dispatch = useDispatch()
 
     const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
-
-    const {screenWidth} = useSelector(state => state.home)
 
     useEffect(() => {
         // set screen width
@@ -25,13 +25,16 @@ function Layout() {
 
     useEffect(() => {
         dispatch(resize(width))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [width]);
 
 
     return (
-        <div>
-            {screenWidth}
-        </div>
+        <>
+            <header>
+                {width >= 768 ? <Navbar/> : <NavDrawer/>}
+            </header>
+        </>
     )
 }
 

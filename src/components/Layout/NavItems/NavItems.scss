@@ -1,0 +1,15 @@
+@import '../../../styles/sass/root';
+
+.NavItems {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.MobileItems {
+  flex-direction: column;
+}
+
+.Item a {
+  @include clickable-text(18px, $neutral_grayish_violet, $neutral_dark_blue)
+}

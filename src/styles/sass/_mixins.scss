@@ -1,0 +1,54 @@
+@mixin mobile() {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+// Button Style
+@mixin btn($color, $border, $background, $radius, $hover-color, $hover-background, $hover-border) {
+  min-width: fit-content;
+  color: $color;
+  background-color: $background;
+  border: 1px solid $border;
+  border-radius: $radius;
+  cursor: pointer;
+
+  &:hover {
+    color: $hover-color;
+    background-color: $hover-background;
+    border-color: $hover-border;
+  }
+}
+
+// clickable text Style
+@mixin clickable-text($size, $color, $hover-color) {
+  color: $color !important;
+  font-size: $size;
+  width: fit-content;
+  height: fit-content;
+
+  &:hover {
+    color: $hover-color !important;
+    cursor: pointer;
+  }
+}
+
+// Input field style
+@mixin input($border-color, $border-radius, $font-size) {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  font-family: inherit;
+  font-size: $font-size;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// show only X number of line
+@mixin showLines($number-of-line) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $number-of-line;
+  -webkit-box-orient: vertical;
+}

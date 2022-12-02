@@ -1,0 +1,10 @@
+@import '../../../styles/sass/root';
+
+.Navbar {
+    width: 100%;
+    height: $laptop_header_height;
+    padding: 0 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
