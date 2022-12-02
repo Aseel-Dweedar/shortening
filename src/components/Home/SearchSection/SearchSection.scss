@@ -1,0 +1,58 @@
+@import "../../../styles/sass/root";
+
+.searchSection {
+  padding: 50px 205px;
+  background-color: lighten($neutral_gray, 20%);
+}
+
+.emailContainer {
+  padding: 40px;
+  margin-top: -110px;
+  height: 140px;
+  display: flex;
+  gap: 15px;
+  border-radius: 4px;
+  background-color: $primary_dark_violet;
+  background-image: url('../../../../public/images/bg-shorten-desktop.svg');
+}
+
+.submit {
+  @include btn($color_white,
+          $primary_cyan,
+          $primary_cyan,
+          6px,
+          $primary_cyan,
+          $color_white,
+          $color_white
+  );
+  width: 20%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.email {
+  @include input($color_white, 8px, 16px);
+  height: 100%;
+  width: 80%;
+}
+
+
+@include mobile() {
+  .searchSection {
+    margin-top: 140px;
+    padding: 20px;
+  }
+  .emailContainer {
+    flex-direction: column;
+    padding: 20px;
+    height: 180px;
+    gap: 40px;
+    background-image: url('../../../../public/images/bg-shorten-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: top 0 right 0;
+  }
+  .email, .submit {
+    width: 100%;
+  }
+}

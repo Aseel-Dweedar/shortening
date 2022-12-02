@@ -1,7 +1,7 @@
 @import "../../../styles/sass/root";
 
-.container {
-  padding: 50px 0 50px 120px;
+.introContainer {
+  padding: 50px 0 100px 205px;
   display: flex;
   justify-content: space-between;
   gap: 100px;
@@ -47,8 +47,9 @@
 }
 
 @include mobile() {
-  .container {
-    padding: 20px 0 20px 20px;
+  .introContainer {
+    padding: 20px;
+    overflow: hidden;
     flex-direction: column-reverse;
     gap: 70px;
 
@@ -65,5 +66,4 @@
       font-size: 3rem;
     }
   }
-
 }
