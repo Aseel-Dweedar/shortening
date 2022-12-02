@@ -1,11 +1,12 @@
 import React from 'react';
+import IntoSection from "./IntoSection/IntoSection";
 
-function Home(props) {
+function Home() {
 
 
     return (
         <div>
-            Home
+            <IntoSection/>
         </div>
     )
 }

@@ -1,0 +1,69 @@
+@import "../../../styles/sass/root";
+
+.container {
+  padding: 50px 0 50px 120px;
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+
+  img {
+    width: 60%;
+    margin-right: -50px;
+  }
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
+  h1 {
+    font-size: 4.5rem;
+    color: $neutral_dark_blue;
+  }
+
+  p {
+    color: $neutral_gray;
+    line-height: 1.5;
+    font-size: 1.2rem;
+  }
+
+  button {
+    @include btn($color_white,
+            $primary_cyan,
+            $primary_cyan,
+            25px,
+            $primary_cyan,
+            $color_white,
+            $color_white
+    );
+    width: 200px;
+    height: 50px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+@include mobile() {
+  .container {
+    padding: 20px 0 20px 20px;
+    flex-direction: column-reverse;
+    gap: 70px;
+
+    img {
+      width: 130%;
+    }
+  }
+
+  .intro {
+    align-items: center;
+    text-align: center;
+
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+}
