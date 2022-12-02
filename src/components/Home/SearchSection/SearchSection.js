@@ -9,6 +9,15 @@ function SearchSection() {
                 <input className={'email'} type='text' placeholder='Shorten a link here'/>
                 <button className={'submit'}>Shorten It!</button>
             </div>
+            <h1>hi</h1>
+            <br/>
+            <h1>hi</h1>
+            <br/>
+            <h1>hi</h1>
+            <br/>
+            <h1>hi</h1>
+            <br/>
+            <h1>hi</h1>
         </div>
     )
 }
