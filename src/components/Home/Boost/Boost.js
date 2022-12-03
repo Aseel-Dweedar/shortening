@@ -7,14 +7,12 @@ function Boost() {
     return (
         <div className={'boost'}>
             <h2>Boost Your Links Today</h2>
-            <CyanBtn
-                onClick={() => {}}
-                extraStyle={{
-                    width: '200px',
-                    height: '50px',
-                    marginTop: '10px',
-                    borderRadius:'25px'
-                }}
+            <CyanBtn extraStyle={{
+                width: '200px',
+                height: '50px',
+                marginTop: '10px',
+                borderRadius: '25px'
+            }}
             >Get Started</CyanBtn>
         </div>
     )
