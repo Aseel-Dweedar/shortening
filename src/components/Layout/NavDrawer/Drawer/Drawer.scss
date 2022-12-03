@@ -13,6 +13,10 @@
   animation: move-down 300ms ease-in;
 }
 
+.up {
+  animation: move-up 300ms ease-in-out;
+}
+
 .drawer {
   width: 100%;
   height: 375px;
@@ -33,14 +37,5 @@
     height: 45px !important;
     font-size: 18px !important;
     color: white;
-  }
-}
-
-@keyframes to-test {
-  0% {
-    transform: translateY(-375px);
-  }
-  100% {
-    transform: translateY(0);
   }
 }
