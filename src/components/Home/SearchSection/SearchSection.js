@@ -1,19 +1,40 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './SearchSection.scss'
-import CyanBtn from "../../../sections/CyanBtn/CyanBtn";
-import {useSelector} from "react-redux";
+import CyanBtn from "../../sections/CyanBtn/CyanBtn";
+import {useSelector, useDispatch} from "react-redux";
+import {onLinkAdded, setError} from "../../../store/shortenLinks/shortenLinksActions";
 
 function SearchSection() {
 
+    const dispatch = useDispatch()
+    const {links, error} = useSelector(state => state.links)
     const screenWidth = useSelector(state => state.home.screenWidth)
+
+    const [inputValue, setInputValue] = useState("");
+
+    const onInputChange = (value) => {
+        dispatch(setError(''))
+        setInputValue(value)
+    }
+
+    const onValueSubmit = () => {
+        if (!inputValue) dispatch(setError('Please add a link'))
+        else dispatch(onLinkAdded(inputValue))
+    }
 
     return (
         <div className={'searchSection'}>
             <div className={'emailContainer'}>
-                <input className={'email'} type='text' placeholder='Shorten a link here'/>
+                <input
+                    onChange={(e) => onInputChange(e.target.value)}
+                    className={'email'}
+                    type='text'
+                    placeholder='Shorten a link here'
+                    value={inputValue}
+                />
+                {error && <p>{error}</p>}
                 <CyanBtn
-                    onClick={() => {
-                    }}
+                    onClick={onValueSubmit}
                     extraStyle={{
                         width: screenWidth > 375 ? '20%' : '100%',
                         height: '100%',
@@ -21,15 +42,19 @@ function SearchSection() {
                     }}
                 >Shorten It!</CyanBtn>
             </div>
-            <h1>hi</h1>
-            <br/>
-            <h1>hi</h1>
-            <br/>
-            <h1>hi</h1>
-            <br/>
-            <h1>hi</h1>
-            <br/>
-            <h1>hi</h1>
+            {
+                links?.length ?
+                    <div>
+                        {
+                            links.map(link =>
+                                <div>
+                                    <p>{link.original}</p>
+                                    <h3>{link.shorten}</h3>
+                                </div>
+                            )
+                        }
+                    </div> : null
+            }
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Statistics.scss';
-import Card from "../../../sections/Card/Card";
+import Card from "../../sections/Card/Card";
 
 const cards = [
     {

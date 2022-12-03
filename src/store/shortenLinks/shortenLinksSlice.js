@@ -1,4 +1,5 @@
-import {createSlice} from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit';
+import {onLinkAdded, setError} from "./shortenLinksActions";
 
 export const shortenLinksSlice = createSlice({
 
@@ -6,15 +7,25 @@ export const shortenLinksSlice = createSlice({
 
     initialState: {
         links: [],
+        error:''
     },
 
-    reducers: {
-        addLink: (state, action) => {
-            state.links = [...state.links, action.payload]
-        },
+    reducers: {},
+
+    extraReducers: (builder) => {
+
+        builder
+
+            .addCase(setError, (state, action) => {
+                state.error = action.payload
+            })
+
+            .addCase(onLinkAdded.fulfilled, (state, action) => {
+                state.links = [...state.links,action.payload]
+            })
+
     }
 
 })
 
-export const {addLink} = shortenLinksSlice.actions
 export default shortenLinksSlice.reducer

@@ -1,6 +1,6 @@
 import React from 'react';
 import './IntoSection.scss'
-import CyanBtn from "../../../sections/CyanBtn/CyanBtn";
+import CyanBtn from "../../sections/CyanBtn/CyanBtn";
 
 function IntoSection() {
 
