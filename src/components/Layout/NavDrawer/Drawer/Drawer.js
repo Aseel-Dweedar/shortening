@@ -6,7 +6,7 @@ import AuthBtn from "../../AuthBtn/AuthBtn";
 function Drawer(props) {
 
     return (
-        <div id={'drawer'} className={'drawerContainer' + " " + props.class}>
+        <div id={'drawer'} className={'drawerContainer ' + props.class}>
             <div className={'drawer'}>
                 <div className={'itemsSection'}>
                     <NavItems isMobile/>
