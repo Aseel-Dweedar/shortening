@@ -1,0 +1,10 @@
+@import "../../styles/sass/root";
+
+button {
+  @include btn($color_white,
+          $primary_cyan,
+          $color_white,
+          lighten($primary_cyan, 20%),
+  );
+  font-family:  $poppins_bold;
+}

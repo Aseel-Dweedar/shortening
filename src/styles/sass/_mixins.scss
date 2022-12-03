@@ -5,18 +5,16 @@
 }
 
 // Button Style
-@mixin btn($color, $border, $background, $radius, $hover-color, $hover-background, $hover-border) {
+@mixin btn($color, $background, $hover-color, $hover-background) {
   min-width: fit-content;
   color: $color;
   background-color: $background;
-  border: 1px solid $border;
-  border-radius: $radius;
   cursor: pointer;
+  border: none;
 
   &:hover {
     color: $hover-color;
     background-color: $hover-background;
-    border-color: $hover-border;
   }
 }
 

@@ -1,12 +1,22 @@
 import React from 'react';
 import './AuthBtn.scss';
+import CyanBtn from "../../../sections/CyanBtn/CyanBtn";
 
 function AuthBtn(props) {
 
     return (
         <div className={`AuthBtn ${props.isMobile ? 'MobileItems' : ""}`}>
             <button className={'Login'}>Login</button>
-            <button className={'SignUp'}>Sign Up</button>
+            <CyanBtn
+                onClick={() => {
+                }}
+                extraStyle={{
+                    width: '100%',
+                    height: '35px',
+                    fontSize: '15px',
+                    borderRadius: '20px'
+                }}
+            >Sign Up</CyanBtn>
         </div>
     )
 }
