@@ -24,15 +24,17 @@ function SearchSection() {
 
     return (
         <div className={'searchSection'}>
-            <div className={'emailContainer'}>
-                <input
-                    onChange={(e) => onInputChange(e.target.value)}
-                    className={`email ${error? 'inputError' : ""}`}
-                    type='text'
-                    placeholder='Shorten a link here'
-                    value={inputValue}
-                />
-                {error && <span className={'error'}>{error}</span>}
+            <div className={'itemsContainer'}>
+                <div className={'emailAndError'}>
+                    <input
+                        onChange={(e) => onInputChange(e.target.value)}
+                        className={`email ${error ? 'inputError' : ""}`}
+                        type='text'
+                        placeholder='Shorten a link here'
+                        value={inputValue}
+                    />
+                    {error && <span className={'error'}>{error}</span>}
+                </div>
                 <CyanBtn
                     onClick={onValueSubmit}
                     extraStyle={{

@@ -5,7 +5,7 @@
   background-color: lighten($neutral_gray, 20%);
 }
 
-.emailContainer {
+.itemsContainer {
   padding: 40px;
   margin-top: -120px;
   height: 140px;
@@ -16,28 +16,33 @@
   background-image: url('../../../../public/images/bg-shorten-desktop.svg');
 }
 
-.email {
-  @include input($color_white, 8px, 16px);
-  height: 100%;
-  width: 80%;
+.emailAndError {
   position: relative;
-}
+  width: 80%;
+  height: 100%;
 
-.inputError{
-  border: 3px solid $secondary_red;
-
-  &::placeholder{
-    color:$secondary_red ;
+  .email {
+    @include input($color_white, 8px, 16px);
+    height: 100%;
+    width: 100%;
   }
-}
 
-.error {
-  position: absolute;
-  bottom: -165px;
-  color: $secondary_red;
-  font-size: 15px;
-  font-family: $poppins_italic;
-  @include showLines(1)
+  .inputError {
+    border: 3px solid $secondary_red;
+
+    &::placeholder {
+      color: $secondary_red;
+    }
+  }
+
+  .error {
+    position: absolute;
+    bottom: -20px;
+    color: $secondary_red;
+    font-size: 15px;
+    font-family: $poppins_italic;
+    @include showLines(1)
+  }
 }
 
 
@@ -46,7 +51,7 @@
     margin-top: 140px;
     padding: 20px;
   }
-  .emailContainer {
+  .itemsContainer {
     flex-direction: column;
     padding: 20px;
     height: 180px;
@@ -55,10 +60,8 @@
     background-repeat: no-repeat;
     background-position: top 0 right 0;
   }
-  .email {
+
+  .emailAndError {
     width: 100%;
-  }
-  .error{
-    bottom: -315px;
   }
 }
