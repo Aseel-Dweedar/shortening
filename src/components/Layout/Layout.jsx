@@ -3,8 +3,9 @@ import Navbar from "./Navbar/Navbar";
 import NavDrawer from "./NavDrawer/NavDrawer";
 import {useDispatch} from 'react-redux';
 import {resize} from '../../store/home/homeSlice';
+import Footer from "./Footer/Footer";
 
-function Layout() {
+function Layout(props) {
 
     const dispatch = useDispatch()
 
@@ -34,6 +35,8 @@ function Layout() {
             <header>
                 {width >= 768 ? <Navbar/> : <NavDrawer/>}
             </header>
+            {props.children}
+            <Footer/>
         </>
     )
 }

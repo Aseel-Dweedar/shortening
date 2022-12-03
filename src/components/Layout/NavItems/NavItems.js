@@ -5,13 +5,20 @@ import {Link} from "react-router-dom";
 
 function NavItems(props) {
 
-
     return (
-        <div className={`NavItems ${props.isMobile ? 'MobileItems' : ""}`}>
+        <div className={`navItems ${props.isMobile ? 'mobileItems' : ""} ${props.isFooter ? 'footerItems' : ""}`}>
             {
                 items.map(item => (
-                    <div key={item.id} className='Item'>
-                        <Link to={'/'}>{item.name}</Link>
+                    <div key={item.id} className='item'>
+                        <Link className={'itemLink'} to={'/'}>{item.name}</Link>
+                        {
+                            props.isFooter &&
+                            <div className={'optionsContainer'}>
+                                {item.options.map((option, i) => (
+                                    <Link key={i} to={'/'}>{option.name}</Link>
+                                ))}
+                            </div>
+                        }
                     </div>
                 ))
             }

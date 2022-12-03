@@ -6,8 +6,8 @@ import AuthBtn from "../AuthBtn/AuthBtn";
 function Navbar() {
 
     return (
-        <div className={'Navbar'}>
-            <div className={'NavItems'}>
+        <div className={'navbar'}>
+            <div className={'logoAndNav'}>
                 <img src='/images/logo.svg' alt='logo'/>
                 <NavItems/>
             </div>

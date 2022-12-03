@@ -1,0 +1,15 @@
+@import '../../../styles/sass/root';
+
+.Footer {
+  background-color: $neutral_dark_violet;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 205px;
+
+  .logo {
+    filter: $filter_white;
+    width: 121px;
+    height: 33px;
+    margin-right: 125px;
+  }
+}

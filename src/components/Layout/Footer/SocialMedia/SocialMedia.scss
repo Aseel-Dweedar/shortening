@@ -1,0 +1,21 @@
+@import '../../../../styles/sass/root';
+
+.SocialMedia {
+  display: flex;
+  gap: 20px;
+}
+
+.iconWrapper {
+  width: 24px;
+  height: 24px;
+}
+
+.SocialMediaItem {
+  object-fit: contain;
+  height: fit-content;
+  filter: $filter_white !important;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,15 +1,46 @@
 @import '../../../styles/sass/root';
 
-.NavItems {
+.navItems {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.MobileItems {
+.item a {
+  @include clickable-text(18px, $neutral_grayish_violet, $neutral_dark_blue)
+}
+
+.mobileItems {
   flex-direction: column;
 }
 
-.Item a {
-  @include clickable-text(18px, $neutral_grayish_violet, $neutral_dark_blue)
+.footerItems {
+  gap: 100px;
+  align-items: flex-start;
+
+  .itemLink {
+    color: $color_white !important;
+    font-family: $poppins_bold;
+
+    &:hover{
+      color: $color_white !important;
+      cursor: unset;
+    }
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .optionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    a {
+      @include clickable-text(18px, $neutral_grayish_violet, $primary_cyan)
+    }
+  }
 }
