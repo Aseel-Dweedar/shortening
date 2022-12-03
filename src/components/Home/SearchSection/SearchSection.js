@@ -3,6 +3,7 @@ import './SearchSection.scss'
 import CyanBtn from "../../sections/CyanBtn/CyanBtn";
 import {useSelector, useDispatch} from "react-redux";
 import {onLinkAdded, setError} from "../../../store/shortenLinks/shortenLinksActions";
+import LinkItem from "./LinkItem/LinkItem";
 
 function SearchSection() {
 
@@ -11,20 +12,33 @@ function SearchSection() {
     const screenWidth = useSelector(state => state.home.screenWidth)
 
     const [inputValue, setInputValue] = useState("");
+    const [copiedTextIdx, setCopiedTextIdx] = useState(null);
 
     const onInputChange = (value) => {
         dispatch(setError(''))
         setInputValue(value)
     }
 
-    const onValueSubmit = () => {
+    const onValueSubmit = (e) => {
+        e.preventDefault();
         if (!inputValue) dispatch(setError('Please add a link'))
-        else dispatch(onLinkAdded(inputValue))
+        else {
+            dispatch(onLinkAdded(inputValue))
+            setInputValue('')
+        }
+    }
+
+    const onCopyClicked = (text, idx) => {
+        setCopiedTextIdx(idx)
+        navigator.clipboard.writeText(text)
+        setTimeout(() => {
+            setCopiedTextIdx(null)
+        }, 3000)
     }
 
     return (
         <div className={'searchSection'}>
-            <div className={'itemsContainer'}>
+            <form className={'itemsContainer'} onSubmit={(e) => onValueSubmit(e)}>
                 <div className={'emailAndError'}>
                     <input
                         onChange={(e) => onInputChange(e.target.value)}
@@ -36,24 +50,25 @@ function SearchSection() {
                     {error && <span className={'error'}>{error}</span>}
                 </div>
                 <CyanBtn
-                    onClick={onValueSubmit}
+                    type='submit'
                     extraStyle={{
                         width: screenWidth > 375 ? '20%' : '100%',
                         height: '100%',
                         borderRadius: '6px'
                     }}
                 >Shorten It!</CyanBtn>
-            </div>
+            </form>
             {
                 links?.length ?
-                    <div>
+                    <div className={'linkItem'}>
                         {
-                            links.map(link =>
-                                <div>
-                                    <p>{link.original}</p>
-                                    <h3>{link.shorten}</h3>
-                                </div>
-                            )
+                            links.map((link, i) => <LinkItem
+                                onCopyClicked={onCopyClicked}
+                                link={link}
+                                key={i+link.original}
+                                idx={i}
+                                copiedText={copiedTextIdx === i}
+                            />)
                         }
                     </div> : null
             }

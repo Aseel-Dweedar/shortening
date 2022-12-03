@@ -1,0 +1,63 @@
+@import "../../../../styles/sass/root";
+
+.linkContainer {
+  height: 70px;
+  background-color: $color_white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 1px 0 $neutral_gray;
+
+  p {
+    width: 100%;
+    color: $neutral_dark_violet;
+    overflow: hidden;
+  }
+}
+
+.shortenLink {
+  height: 100%;
+  display: flex;
+  gap:20px;
+  align-items: center;
+
+  p {
+    color: $primary_cyan;
+  }
+}
+
+.copied {
+  @include btn($color_white,$neutral_dark_blue, $color_white,$neutral_dark_blue);
+  width: 130px;
+  height: 100%;
+  border-radius: 6px;
+  font-size: 15px
+}
+
+@include mobile() {
+  .linkContainer {
+    height: unset;
+    padding: unset;
+    gap: 0;
+    flex-direction: column;
+
+    .originalLink {
+      padding: 25px 15px;
+      border-bottom: 1px solid $neutral_gray;
+      line-break: anywhere;
+    }
+  }
+
+  .shortenLink {
+    flex-direction: column;
+    padding: 15px;
+    width: 100%;
+  }
+  .copied {
+    width: 100%;
+    height: 40px;
+  }
+}
