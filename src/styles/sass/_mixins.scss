@@ -50,3 +50,15 @@
   -webkit-line-clamp: $number-of-line;
   -webkit-box-orient: vertical;
 }
+
+// animation move up/down
+@mixin move-up-down($name, $value1, $value2) {
+  @keyframes #{$name} {
+    0% {
+      transform: translateY($value1);
+    }
+    100% {
+      transform: translateY($value2);
+    }
+  }
+}

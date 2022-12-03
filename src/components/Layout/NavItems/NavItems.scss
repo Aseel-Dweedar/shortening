@@ -12,6 +12,11 @@
 
 .mobileItems {
   flex-direction: column;
+  gap: 30px;
+
+  a {
+    color: $color_white !important;
+  }
 }
 
 .footerItems {

@@ -1,9 +1,9 @@
 @import "../../../styles/sass/root";
 
 .statisticsContainer {
-  padding: 50px 205px;
+  padding: 70px 205px;
   display: flex;
-  gap: 60px;
+  gap: 90px;
   flex-direction: column;
   align-items: center;
   background-color: lighten($neutral_gray, 20%);

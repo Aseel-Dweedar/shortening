@@ -5,7 +5,7 @@ import CyanBtn from "../../../sections/CyanBtn/CyanBtn";
 function AuthBtn(props) {
 
     return (
-        <div className={`AuthBtn ${props.isMobile ? 'MobileItems' : ""}`}>
+        <div className={`AuthBtn ${props.isMobile ? 'MobileBtn' : ""}`}>
             <button className={'Login'}>Login</button>
             <CyanBtn
                 onClick={() => {
