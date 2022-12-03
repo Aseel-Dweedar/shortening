@@ -10,7 +10,8 @@ export const onLinkAdded = createAsyncThunk(
             let {data} = await createShortenLink(payload)
             return {original: payload, shorten: data.result.full_short_link};
         } catch (error) {
-            thunkAPI.dispatch(setError(error?.response?.data?.error))
+            let message = error?.response?.data?.error?.split(",")[0]
+            thunkAPI.dispatch(setError(message))
         }
         return []
     }

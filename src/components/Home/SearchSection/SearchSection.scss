@@ -20,6 +20,24 @@
   @include input($color_white, 8px, 16px);
   height: 100%;
   width: 80%;
+  position: relative;
+}
+
+.inputError{
+  border: 3px solid $secondary_red;
+
+  &::placeholder{
+    color:$secondary_red ;
+  }
+}
+
+.error {
+  position: absolute;
+  bottom: -165px;
+  color: $secondary_red;
+  font-size: 15px;
+  font-family: $poppins_italic;
+  @include showLines(1)
 }
 
 
@@ -39,5 +57,8 @@
   }
   .email {
     width: 100%;
+  }
+  .error{
+    bottom: -315px;
   }
 }

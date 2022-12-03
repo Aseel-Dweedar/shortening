@@ -27,12 +27,12 @@ function SearchSection() {
             <div className={'emailContainer'}>
                 <input
                     onChange={(e) => onInputChange(e.target.value)}
-                    className={'email'}
+                    className={`email ${error? 'inputError' : ""}`}
                     type='text'
                     placeholder='Shorten a link here'
                     value={inputValue}
                 />
-                {error && <p>{error}</p>}
+                {error && <span className={'error'}>{error}</span>}
                 <CyanBtn
                     onClick={onValueSubmit}
                     extraStyle={{
