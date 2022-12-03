@@ -13,3 +13,16 @@
     margin-right: 125px;
   }
 }
+
+@include mobile() {
+  .Footer {
+    padding: 70px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+
+    .logo {
+      margin-right: unset;
+    }
+  }
+}

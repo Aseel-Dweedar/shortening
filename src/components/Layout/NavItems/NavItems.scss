@@ -44,3 +44,14 @@
     }
   }
 }
+
+@include mobile() {
+  .footerItems {
+    flex-direction: column;
+    gap: 60px;
+
+    &,.item, .optionsContainer{
+      align-items: center;
+    }
+  }
+}

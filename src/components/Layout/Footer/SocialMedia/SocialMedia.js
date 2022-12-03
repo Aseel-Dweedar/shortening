@@ -5,16 +5,19 @@ import {Link} from "react-router-dom";
 const items = [
     {
         name:'facebook',
-        path:"https://www.facebook.com/"
+        path:"/"
     },
     {
         name:'twitter',
+        path:"/"
     },
     {
         name:'instagram',
+        path:"/"
     },
     {
         name:'pinterest',
+        path:"/"
     },
 ]
 
