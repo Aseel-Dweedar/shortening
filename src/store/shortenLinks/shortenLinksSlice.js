@@ -10,7 +10,11 @@ export const shortenLinksSlice = createSlice({
         error:''
     },
 
-    reducers: {},
+    reducers: {
+        setAllLinks: (state,action) => {
+            state.links = action.payload
+        },
+    },
 
     extraReducers: (builder) => {
 
@@ -28,4 +32,5 @@ export const shortenLinksSlice = createSlice({
 
 })
 
+export const { setAllLinks } = shortenLinksSlice.actions
 export default shortenLinksSlice.reducer
