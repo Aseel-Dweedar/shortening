@@ -25,7 +25,7 @@ export const shortenLinksSlice = createSlice({
             })
 
             .addCase(onLinkAdded.fulfilled, (state, action) => {
-                state.links = [...state.links,action.payload]
+                if (action.payload) state.links = [...state.links,action.payload]
             })
 
     }

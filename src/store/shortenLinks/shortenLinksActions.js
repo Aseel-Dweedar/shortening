@@ -17,6 +17,5 @@ export const onLinkAdded = createAsyncThunk(
             let message = error?.response?.data?.error?.split(",")[0]
             thunkAPI.dispatch(setError(message))
         }
-        return []
     }
 )
